@@ -73,3 +73,11 @@ ip link set dev map-e up \
 ip route add default dev map-e \
 iptables -t nat -I POSTROUTING -o map-e -j MASQUERADE \
 ip -6 r a 2001::2/128 dev eth5
+
+=================================================================================================================
+
+MAPE-tunnel:
+Ethernet--IPV6 header--Inner IP header--Payload
+
+The FTP client is (192.168.1.254) getting a file from the FTP server (192.168.2.254).
+FTP port is 21
